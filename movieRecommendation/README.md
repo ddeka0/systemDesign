@@ -2,6 +2,12 @@
 
 ##### [Project Under Development]
 
+##### How to Run ?
+    1. cd movieRecommendation
+    2. cmake .
+    3. make
+    4. ./build/bin/movieRecommend
+
 ##### Next TODO:
     1. Add Class diagram for all the modules
     2. Improve design
