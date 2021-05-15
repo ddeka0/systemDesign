@@ -11,6 +11,7 @@ namespace core {
     class ReviewService {
         public:
             ReviewService();
+            ~ReviewService();
             ReviewService(MovieCatalog* movieCatalog);
             void addReview(model::User* reviewer,model::Movie* movie,int rating);
             std::vector<model::Movie*> getTopMovies(int year, std::string genre,int userLevel,int howMany);

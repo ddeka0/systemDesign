@@ -11,6 +11,7 @@ namespace api {
     class Api {
     public:
         Api();
+        ~Api();
         void addUser(std::string name);
         void addMovie(std::string movieName,std::string genre,int year);
         void addReview(std::string reviewerName,std::string movieName,int rating);

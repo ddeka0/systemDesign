@@ -8,11 +8,13 @@ namespace api {
         {"viewer",ViewerLevel},
         {"critic",CriticLevel}
     };
+
     Api::Api() {
         m_movieCatalog = new core::MovieCatalog();
         m_userManager = new core::UserManager();
         m_AddService = new core::AddService(m_movieCatalog,m_userManager);
         m_reviewService = new core::ReviewService();
+        std::cout <<"API created!" << std::endl;
     }
     Api::~Api() {
         delete m_movieCatalog; m_movieCatalog = nullptr;
@@ -39,31 +41,32 @@ namespace api {
         auto movie = m_movieCatalog->getMovie(movieName);
         if(movie == nullptr) {
             m_movieCatalog->addMovie(movieName,genre,year);
+            return;
         }
         std::cout <<"Error ! Movie already exists!" << std::endl;
     }
     
     std::vector<std::string> Api::getTopMoviesByYear(int year,std::string typeOfReviewer,int howMany) {
+        std::vector<std::string> reply;
         if(Map.find(typeOfReviewer) != Map.end()) {
             auto listOfMovies = m_reviewService->getTopMovies(year,"",Map[typeOfReviewer],howMany);
-            std::vector<std::string> reply;
             for(auto&& movie : listOfMovies) {
                 reply.push_back(movie->getName());
             }
-            return reply;
         }
+        return reply;
         std::cout <<"Error ! Type of user is not known!" << std::endl;
     }
 
     std::vector<std::string> Api::getTopMoviesByGenre(std::string genre,std::string typeOfReviewer,int howMany) {
+         std::vector<std::string> reply;
          if(Map.find(typeOfReviewer) != Map.end()) {
             auto listOfMovies = m_reviewService->getTopMovies(0,genre,Map[typeOfReviewer],howMany);
-            std::vector<std::string> reply;
             for(auto&& movie : listOfMovies) {
                 reply.push_back(movie->getName());
             }
-            return reply;
         }
+        return reply;
         std::cout <<"Error ! Type of user is not known!" << std::endl;       
     }
 

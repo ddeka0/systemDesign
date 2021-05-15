@@ -1,6 +1,7 @@
 #include "reviewService.hpp"
 #include <iostream>
 
+using namespace model;
 namespace core {
     
     ReviewService::ReviewService() {
