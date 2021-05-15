@@ -3,13 +3,12 @@
 
 # Compiled Object files
 bin_*
-.vscode/
 /build/
 /CMakeFiles/
 cmake_install.*
 CMakeCache.*
 Makefile
-.vscode
+.vscode/
 
 *.slo
 *.lo
