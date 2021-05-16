@@ -8,11 +8,18 @@
     3. make
     4. ./build/bin/movieRecommend
 
+
+##### Generate Documentation
+    1. cd movieRecommendation
+    2. doxygen Doxyfile
+    3. cd ..
+    4. Open index.html from html folder
+
 ##### Partial Class Diagram (Using Doxygen, no STL container relations are shown)
 ![class_diagram](https://github.com/ddeka0/systemDesign/blob/dev/movieRecommendation/api_diagram.png)
 
 ##### Next TODO:
-    1. Add Class diagram for all the modules
+    1. Add design document
     2. Improve design
 
 ##### How to improve design
