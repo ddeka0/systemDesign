@@ -8,7 +8,7 @@
     3. make
     4. ./build/bin/movieRecommend
 
-##### Partial Class Diagram (Using Doxygen, not STL container relations are shown)
+##### Partial Class Diagram (Using Doxygen, no STL container relations are shown)
 ![class_diagram](https://github.com/ddeka0/systemDesign/blob/dev/movieRecommendation/api_diagram.png)
 
 ##### Next TODO:
