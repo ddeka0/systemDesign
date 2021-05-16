@@ -8,6 +8,9 @@
     3. make
     4. ./build/bin/movieRecommend
 
+##### Partial Class Diagram (Using Doxygen, not STL container relations are shown)
+![class_diagram](https://github.com/ddeka0/systemDesign/blob/dev/movieRecommendation/api_diagram.png)
+
 ##### Next TODO:
     1. Add Class diagram for all the modules
     2. Improve design
