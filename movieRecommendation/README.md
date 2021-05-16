@@ -14,6 +14,8 @@
     2. doxygen Doxyfile
     3. cd ..
     4. Open index.html from html folder
+    5. NOTE : Please change the following in the Doxyfile
+        OUTPUT_DIRECTORY       = /home/deka/Academic/systemDesign/docs to something else
 
 ##### Partial Class Diagram (Using Doxygen, no STL container relations are shown)
 ![class_diagram](https://github.com/ddeka0/systemDesign/blob/dev/movieRecommendation/api_diagram.png)
