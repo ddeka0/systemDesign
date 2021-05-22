@@ -1,2 +1,0 @@
-/usr/bin/ar qc liblibMODEL.a CMakeFiles/libMODEL.dir/src/movie.cpp.o CMakeFiles/libMODEL.dir/src/review.cpp.o CMakeFiles/libMODEL.dir/src/user.cpp.o
-/usr/bin/ranlib liblibMODEL.a

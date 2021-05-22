@@ -2,16 +2,16 @@
 *.d
 
 # Compiled Object files
-bin_*
+movieRecommendation/bin_*
 docs/
 movieRecommendation/.gdb_history
 .vscode/
-/build/
-/CMakeFiles/
-cmake_install.*
-CMakeCache.*
-Makefile
-.vscode
+movieRecommendation/build/
+movieRecommendation/CMakeFiles/
+movieRecommendation/cmake_install.*
+movieRecommendation/CMakeCache.*
+movieRecommendation/Makefile
+movieRecommendation/.vscode
 
 *.slo
 *.lo

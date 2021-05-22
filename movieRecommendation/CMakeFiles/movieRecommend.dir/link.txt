@@ -1,1 +1,0 @@
-/usr/bin/c++ -std=c++17 -Wall -g -ftime-report -fsanitize=address -fsanitize=leak -g CMakeFiles/movieRecommend.dir/test/src/main.cpp.o -o build/bin/movieRecommend  bin_apis/liblibAPI.a bin_core/liblibCORE.a bin_model/liblibMODEL.a 
