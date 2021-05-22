@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblibCORE.a CMakeFiles/libCORE.dir/src/addService.cpp.o CMakeFiles/libCORE.dir/src/movieCatalog.cpp.o CMakeFiles/libCORE.dir/src/reviewService.cpp.o CMakeFiles/libCORE.dir/src/userManager.cpp.o
+/usr/bin/ranlib liblibCORE.a
