@@ -40,7 +40,17 @@ For example lets see, api::Api class and its dependencies.
     2. Improve design
 
 ##### How to improve design
+ 
+ Overall components in our system:
+ 
+ ![component_system_diagram](https://github.com/ddeka0/systemDesign/blob/main/movieRecommendation/docs/images/total.png)
+ 
+ 
+    As we can there are multiple components or classes interacting with each other. We can improvde upon
+    the logic dependency among components so that we have flexible system, which can be maintained whichout
+    loosing much performance. 
     
+
     1. Reduce logical dependency
         => User proper design pattern
     
