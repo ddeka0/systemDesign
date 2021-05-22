@@ -23,7 +23,13 @@
 
 #### Internal Details of Classes and Functions
 
-![api_class_diagram](https://github.com/ddeka0/systemDesign/blob/main/movieRecommendation/docs/images/apiClass.png)    
+For example lets see, api::Api class and its dependencies.
+
+    1. Logical structure and dependency:
+
+![api_class_diagram](https://github.com/ddeka0/systemDesign/blob/main/movieRecommendation/docs/images/apiClass.png)
+
+
 
 ##### Next TODO:
     1. Add design document
