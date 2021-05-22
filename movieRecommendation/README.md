@@ -54,6 +54,14 @@ For example lets see, api::Api class and its dependencies.
 
         ** for example, think of a situation where we want to change the algorithm to get topmovie list.
 
+Please check current code base:
+
+![api_class_diagram](https://github.com/ddeka0/systemDesign/blob/main/movieRecommendation/docs/images/buildHierar.png)
+
+Question ? Do you want to build this entire chain of files every time when you change something at model header files ?
+=> Probably not!!
+
+
     2. Reduce physical dependency
         
         => remove build dependency by using pimpl or similar strategy
