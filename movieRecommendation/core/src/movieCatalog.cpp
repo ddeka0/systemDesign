@@ -46,7 +46,7 @@ namespace core {
 
     std::vector<model::Movie*> MovieCatalog::getMovieListByReleaseYear(int year) {
         std::vector<model::Movie*> res;
-        for(auto movie : m_movieList) {
+        for(auto&& movie : m_movieList) {
             if(movie->getReleaseYear() == year) res.push_back(movie);
         }
         return res;

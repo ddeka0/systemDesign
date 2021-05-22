@@ -3,6 +3,8 @@
 
 # Compiled Object files
 bin_*
+docs/
+movieRecommendation/.gdb_history
 .vscode/
 /build/
 /CMakeFiles/

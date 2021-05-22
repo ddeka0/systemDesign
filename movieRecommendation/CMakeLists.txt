@@ -44,9 +44,12 @@ add_executable(${PROJECT_NAME}
 #set(BASIC_LIBRARIES "-lpthread -lcrypto")
 #set(REST_LIBRARIES "-lcpprest -lyaml-cpp")
 #set(CMAKE_CXX_FLAGS "-std=c++0x -Wall -g  -fsanitize=address")
-set(CMAKE_CXX_FLAGS "-std=c++17 -Wall -g -fsanitize=address -fsanitize=leak")
+set(CMAKE_CXX_FLAGS "-std=c++17 -Wall -g -ftime-report -fsanitize=address -fsanitize=leak")
 #set(CMAKE_CXX_FLAGS "-std=c++17 -Wall -g")
 #set(CMAKE_LINK_WHAT_YOU_USE ON)
+
+#set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "time -v")
+#set_property(GLOBAL PROPERTY RULE_LAUNCH_LINK "time -v")
 
 #find_library(proto_location NAMES protobuf PATHS ${LIBDIR})
 #find_library(grpc_location NAMES grpc++ PATHS ${LIBDIR})

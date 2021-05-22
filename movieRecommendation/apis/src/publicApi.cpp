@@ -6,14 +6,16 @@
 namespace api {
     std::map<std::string,int> Map = {
         {"viewer",ViewerLevel},
-        {"critic",CriticLevel}
+        {"critic",CriticLevel},
+        {"moderator",ModeratorLevel},
+        {"admin",AdminLevel}
     };
 
     Api::Api() {
         m_movieCatalog = new core::MovieCatalog();
         m_userManager = new core::UserManager();
         m_AddService = new core::AddService(m_movieCatalog,m_userManager);
-        m_reviewService = new core::ReviewService();
+        m_reviewService = new core::ReviewService(m_movieCatalog,m_userManager);
         std::cout <<"API created!" << std::endl;
     }
     Api::~Api() {
@@ -29,12 +31,17 @@ namespace api {
 
     void Api::addReview(std::string reviewerName,std::string movieName,int rating) {
         auto user = m_userManager->getUser(reviewerName);
-        auto movie = m_movieCatalog->getMovie(movieName);
-        if(user != nullptr && movie != nullptr) {
-            m_reviewService->addReview(user,movie,rating);
-            return;   
+        if(user == nullptr) {
+            std::cout <<reviewerName<<" user is not added!" <<std::endl;
+            return;
         }
-        std::cout <<"Error ! No user or movie found!" << std::endl;
+        auto movie = m_movieCatalog->getMovie(movieName);
+        if(movie == nullptr) {
+            std::cout <<movieName<<" movie is not added!" << std::endl;
+            return;
+        }
+        m_reviewService->addReview(user,movie,rating);
+        return;
     }
 
     void Api::addMovie(std::string movieName,std::string genre,int year) {
