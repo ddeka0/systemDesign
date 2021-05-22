@@ -56,7 +56,7 @@ For example lets see, api::Api class and its dependencies.
 
 Please check current code base:
 
-![api_class_diagram](https://github.com/ddeka0/systemDesign/blob/main/movieRecommendation/docs/images/buildHierar.png)
+![build_depend_diagram](https://github.com/ddeka0/systemDesign/blob/main/movieRecommendation/docs/images/buildHierar.png)
 
 Question ? Do you want to build this entire chain of files every time when you change something at model header files ?
 => Probably not!!
@@ -69,6 +69,14 @@ Question ? Do you want to build this entire chain of files every time when you c
 
     3. Refine APIs if required, think how user can exploit or misuse the API which might lead to problem in our syste.
      APIs should be easy to use and hard to misuse.
+
+Pleae check the following call chain (randomly picked from the codebase):
+
+![call_chain_diagram](https://github.com/ddeka0/systemDesign/blob/main/movieRecommendation/docs/images/callChain.png)
+
+Can we ask us the follwoing questions ?
+    1. If one of function creates some error or exceptions how it can be handled ? What caller and callee would do ?
+    2. What is our Error and Exception handling strategy ? We can adopt Error codes or exception thowing mechanism.
 
 
     4. Handle Errors (all possible). Exception cases. Need to know (real cases) how exceptions are handles. 
