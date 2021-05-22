@@ -21,6 +21,10 @@
 ##### Partial Class Diagram (Using Doxygen, no STL container relations are shown)
 ![class_diagram](https://github.com/ddeka0/systemDesign/blob/dev/movieRecommendation/api_diagram.png)
 
+#### Internal Details of Classes and Functions
+
+![api_class_diagram](https://github.com/ddeka0/systemDesign/blob/main/movieRecommendation/docs/images/apiClass.png)    
+
 ##### Next TODO:
     1. Add design document
     2. Improve design
