@@ -29,6 +29,10 @@ For example lets see, api::Api class and its dependencies.
 
 ![api_class_diagram](https://github.com/ddeka0/systemDesign/blob/main/movieRecommendation/docs/images/apiClass.png)
 
+    2. Physical structure and dependency:
+    
+![api_phy_diagram](https://github.com/ddeka0/systemDesign/blob/main/movieRecommendation/docs/images/apiPhy.png)
+
 
 
 ##### Next TODO:
@@ -36,7 +40,17 @@ For example lets see, api::Api class and its dependencies.
     2. Improve design
 
 ##### How to improve design
+ 
+ Overall components in our system:
+ 
+ ![component_system_diagram](https://github.com/ddeka0/systemDesign/blob/main/movieRecommendation/docs/images/total.png)
+ 
+ 
+    As we can there are multiple components or classes interacting with each other. We can improvde upon
+    the logic dependency among components so that we have flexible system, which can be maintained whichout
+    loosing much performance. 
     
+
     1. Reduce logical dependency
         => User proper design pattern
     
@@ -50,6 +64,14 @@ For example lets see, api::Api class and its dependencies.
 
         ** for example, think of a situation where we want to change the algorithm to get topmovie list.
 
+Please check current code base:
+
+![build_depend_diagram](https://github.com/ddeka0/systemDesign/blob/main/movieRecommendation/docs/images/buildHierar.png)
+
+Question ? Do you want to build this entire chain of files every time when you change something at model header files ?
+=> Probably not!!
+
+
     2. Reduce physical dependency
         
         => remove build dependency by using pimpl or similar strategy
@@ -58,7 +80,17 @@ For example lets see, api::Api class and its dependencies.
     3. Refine APIs if required, think how user can exploit or misuse the API which might lead to problem in our syste.
      APIs should be easy to use and hard to misuse.
 
+Pleae check the following call chain (randomly picked from the codebase):
 
+![call_chain_diagram](https://github.com/ddeka0/systemDesign/blob/main/movieRecommendation/docs/images/callChain.png)
+
+Can we ask us the follwoing questions ?
+
+    a. If one of function creates some error or exceptions how it can be handled ? What caller and callee would do ?
+    b. What is our Error and Exception handling strategy ? We can adopt Error codes or exception thowing mechanism.
+    
+    Good Talk: https://www.youtube.com/watch?v=W6jZKibuJpU&ab_channel=CppConCppCon
+    
     4. Handle Errors (all possible). Exception cases. Need to know (real cases) how exceptions are handles. 
     Does all sustems needs exception handling? (Cost of Exception handling ?)
 
