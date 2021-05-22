@@ -75,10 +75,12 @@ Pleae check the following call chain (randomly picked from the codebase):
 ![call_chain_diagram](https://github.com/ddeka0/systemDesign/blob/main/movieRecommendation/docs/images/callChain.png)
 
 Can we ask us the follwoing questions ?
-    1. If one of function creates some error or exceptions how it can be handled ? What caller and callee would do ?
-    2. What is our Error and Exception handling strategy ? We can adopt Error codes or exception thowing mechanism.
 
-
+    a. If one of function creates some error or exceptions how it can be handled ? What caller and callee would do ?
+    b. What is our Error and Exception handling strategy ? We can adopt Error codes or exception thowing mechanism.
+    
+    Good Talk: https://www.youtube.com/watch?v=W6jZKibuJpU&ab_channel=CppConCppCon
+    
     4. Handle Errors (all possible). Exception cases. Need to know (real cases) how exceptions are handles. 
     Does all sustems needs exception handling? (Cost of Exception handling ?)
 
