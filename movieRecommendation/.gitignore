@@ -9,7 +9,7 @@ cmake_install.*
 CMakeCache.*
 Makefile
 .vscode/
-
+report/
 compile_commands.json
 movieRecommend.srctrlbm
 movieRecommend.srctrldb
