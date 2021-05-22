@@ -44,7 +44,19 @@ add_executable(${PROJECT_NAME}
 #set(BASIC_LIBRARIES "-lpthread -lcrypto")
 #set(REST_LIBRARIES "-lcpprest -lyaml-cpp")
 #set(CMAKE_CXX_FLAGS "-std=c++0x -Wall -g  -fsanitize=address")
-set(CMAKE_CXX_FLAGS "-std=c++17 -Wall -g -ftime-report -fsanitize=address -fsanitize=leak")
+find_program(CMAKE_CXX_CPPCHECK NAMES cppcheck)
+if (CMAKE_CXX_CPPCHECK)
+    list(
+        APPEND CMAKE_CXX_CPPCHECK 
+            "--enable=warning"
+            "--inconclusive"
+            "--force" 
+            "--inline-suppr"
+            "--suppressions-list=${CMAKE_SOURCE_DIR}/CppCheckSuppressions.txt"
+    )
+endif()
+
+set(CMAKE_CXX_FLAGS "-std=c++17 -Wall -g -fsanitize=address -fsanitize=leak")
 #set(CMAKE_CXX_FLAGS "-std=c++17 -Wall -g")
 #set(CMAKE_LINK_WHAT_YOU_USE ON)
 

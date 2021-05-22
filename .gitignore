@@ -3,7 +3,6 @@
 
 # Compiled Object files
 movieRecommendation/bin_*
-docs/
 movieRecommendation/.gdb_history
 .vscode/
 movieRecommendation/build/

@@ -10,6 +10,13 @@ CMakeCache.*
 Makefile
 .vscode/
 
+*.png
+compile_commands.json
+movieRecommend.srctrlbm
+movieRecommend.srctrldb
+movieRecommend.srctrlprj
+
+
 *.slo
 *.lo
 *.o
