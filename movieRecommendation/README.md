@@ -29,6 +29,10 @@ For example lets see, api::Api class and its dependencies.
 
 ![api_class_diagram](https://github.com/ddeka0/systemDesign/blob/main/movieRecommendation/docs/images/apiClass.png)
 
+    2. Physical structure and dependency:
+    
+![api_phy_diagram](https://github.com/ddeka0/systemDesign/blob/main/movieRecommendation/docs/images/apiPhy.png)
+
 
 
 ##### Next TODO:
