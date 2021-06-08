@@ -7,7 +7,7 @@ include_directories(${PROJECT_SOURCE_DIR}/models/inc/)
 
 file(GLOB CORE_SRC src/*.cpp)
 
-add_library(libCORE STATIC ${CORE_SRC})
+add_library(CORE SHARED ${CORE_SRC})
 
 set(CMAKE_CXX_FLAGS "-std=c++17 -Wall -g")
 # set(CRYPTO_LIBRARIES  "-lssl -lcrypto")

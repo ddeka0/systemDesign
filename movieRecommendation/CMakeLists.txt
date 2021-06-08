@@ -44,17 +44,24 @@ add_executable(${PROJECT_NAME}
 #set(BASIC_LIBRARIES "-lpthread -lcrypto")
 #set(REST_LIBRARIES "-lcpprest -lyaml-cpp")
 #set(CMAKE_CXX_FLAGS "-std=c++0x -Wall -g  -fsanitize=address")
-find_program(CMAKE_CXX_CPPCHECK NAMES cppcheck)
-if (CMAKE_CXX_CPPCHECK)
-    list(
-        APPEND CMAKE_CXX_CPPCHECK 
-            "--enable=warning"
-            "--inconclusive"
-            "--force" 
-            "--inline-suppr"
-            "--suppressions-list=${CMAKE_SOURCE_DIR}/CppCheckSuppressions.txt"
-    )
-endif()
+# find_program(CMAKE_CXX_CPPCHECK NAMES cppcheck)
+# if (CMAKE_CXX_CPPCHECK)
+#     message(STATUS "cppcheck library found at " ${proto_location})
+#     list(
+#         APPEND CMAKE_CXX_CPPCHECK 
+#             "--enable=warning"
+#             "--inconclusive"
+#             "--force" 
+#             "--inline-suppr"
+#             "--suppressions-list=${CMAKE_SOURCE_DIR}/CppCheckSuppressions.txt"
+#     )
+# endif()
+set(CMAKE_CXX_CPPCHECK "cppcheck")
+
+# find_library(cppcheck_location NAMES cppcheck PATHS ${LIBDIR})
+# if(cppcheck_location)
+#   message(STATUS "cppcheck library found at " ${cppcheck_location})
+# endif()
 
 set(CMAKE_CXX_FLAGS "-std=c++17 -Wall -g -fsanitize=address -fsanitize=leak")
 #set(CMAKE_CXX_FLAGS "-std=c++17 -Wall -g")
@@ -86,9 +93,9 @@ set(CMAKE_CXX_FLAGS "-std=c++17 -Wall -g -fsanitize=address -fsanitize=leak")
 # endif()
 
 target_link_libraries(${PROJECT_NAME}
-                        libAPI
-                        libCORE
-                        libMODEL
+                        API
+                        CORE
+                        MODEL
 )
 
 # target_link_libraries(${PROJECT_NAME}  

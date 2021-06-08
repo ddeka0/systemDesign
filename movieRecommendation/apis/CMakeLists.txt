@@ -8,7 +8,7 @@ include_directories(${PROJECT_SOURCE_DIR}/common/)
 
 file(GLOB API_SRC src/*.cpp)
 
-add_library(libAPI STATIC ${API_SRC})
+add_library(API SHARED ${API_SRC})
 
 set(CMAKE_CXX_FLAGS "-std=c++17 -Wall -g")
 # set(CRYPTO_LIBRARIES  "-lssl -lcrypto")

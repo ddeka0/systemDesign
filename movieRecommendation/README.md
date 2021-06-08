@@ -61,7 +61,8 @@ For example lets see, api::Api class and its dependencies.
     
 ![api_phy_diagram](https://github.com/ddeka0/systemDesign/blob/main/movieRecommendation/docs/images/apiPhy.png)
 
-
+##### Update:
+Instead of static library, CmakeFile is updated with Shared library settings
 
 ##### Next TODO:
     1. Add design document
