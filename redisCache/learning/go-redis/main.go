@@ -41,6 +41,10 @@ type Follow struct {
 	FolloweeId int `json:"followee_id"`
 }
 
+type GetFollow struct {
+	UserId int `json:"user_id"`
+}
+
 func home(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path != "/" {
 		http.NotFound(w, r)
@@ -115,6 +119,45 @@ func follow(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("follow API !"))
 }
 
+func getFollowers(w http.ResponseWriter, r *http.Request) {
+	if r.Method != "GET" {
+		w.Header().Set("Allow", "GET")
+		w.WriteHeader(405)
+		w.Write([]byte("Method not allowed"))
+		return
+	}
+
+	decoder := json.NewDecoder(r.Body)
+	getFollow := GetFollow{}
+	decoder.Decode(&getFollow)
+
+	rows, err := db.Query(`select * from users
+		where id in (
+			select id from follower
+			where followee_id = ?
+		);`, getFollow.UserId)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer rows.Close()
+
+	users := []User{}
+	for rows.Next() {
+		user := User{}
+		var id int
+		err := rows.Scan(&id, &user.Uname, &user.First_name, &user.Last_name, &user.Age)
+		if err != nil {
+			log.Fatal(err)
+		}
+		users = append(users, user)
+	}
+	log.Println(users)
+	w.Header().Set("Content-Type", "application/json")
+	encoder := json.NewEncoder(w)
+	encoder.Encode(users)
+}
+
 func getUser(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "GET" {
 		w.WriteHeader(405)
@@ -169,11 +212,13 @@ func main() {
 	stmt3.Exec()
 
 	mux := http.NewServeMux()
+
 	mux.HandleFunc("/", home)
 	mux.HandleFunc("/adduser", addNewUser)
 	mux.HandleFunc("/addTweet", addTweet)
 	mux.HandleFunc("/follow", follow)
 	mux.HandleFunc("/getuser", getUser)
+	mux.HandleFunc("/getfollowers", getFollowers)
 
 	log.Println("Started server on:4123")
 	err := http.ListenAndServe(":4123", mux)
